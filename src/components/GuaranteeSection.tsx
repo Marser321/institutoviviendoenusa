@@ -22,8 +22,8 @@ const guarantees = [
   },
   {
     icon: RefreshCw,
-    title: "Garantía de Satisfacción",
-    description: "Si no ves progreso real en tu reporte en los primeros 90 días, trabajamos contigo hasta lograrlo.",
+    title: "Garantía de Paz Financiera",
+    description: "Si aplicas nuestras estrategias y no ves un avance real en tu reporte en 90 días, trabajamos gratis hasta lograrlo.",
   },
 ];
 
@@ -38,10 +38,10 @@ export const GuaranteeSection = () => {
           <div className="relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-navy font-display font-bold text-3xl md:text-5xl mb-6 tracking-tight">
-                Tu tranquilidad es nuestra <span className="text-brand-green italic">prioridad</span>.
+                Tu único riesgo real es <span className="text-brand-green italic">no hacer nada</span>.
               </h2>
               <p className="text-brand-navy/50 text-lg max-w-xl mx-auto font-medium">
-                Operamos bajo los más altos estándares de seguridad y ética profesional en Estados Unidos.
+                El costo de un mal crédito se paga todos los días. Nuestra garantía blinda tu decisión con resultados reales.
               </p>
             </div>
 

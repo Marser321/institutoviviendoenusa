@@ -13,11 +13,11 @@ const plans = [
     badge: null,
     description: "El manual definitivo para dominar tu FICO® y abrir puertas.",
     features: [
-      "17 módulos tácticos paso a paso",
-      "Leyes federales a tu favor (FCRA)",
-      "Plantillas de disputa de alta tasa",
-      "Estrategia de 0 a 700+ puntos",
-      "Acceso permanente a actualizaciones",
+      "De 'Rechazado' a 'Aprobado Automáticamente'",
+      "Usa la ley FCRA para borrar cuentas en colección",
+      "Cartas de disputa que los burós no pueden ignorar",
+      "El mapa exacto de 0 a 700+ en tiempo récord",
+      "Blindaje crediticio contra futuros errores",
     ],
     cta: "Iniciar Maestría",
     highlighted: false,
@@ -29,12 +29,12 @@ const plans = [
     badge: "Elección Inteligente",
     description: "Dominio total: Personal + Comercial. Tu imperio empieza aquí.",
     features: [
-      "Todo el curso Personal (Master)",
-      "Todo el curso Comercial (EIN)",
-      "Ahorra $97 USD de inmediato",
-      "Soporte Prioritario VIP 1-a-1",
-      "Plantillas de fondeo comercial",
-      "Acceso a mentorías grupales",
+      "Fusión total: Crédito Personal + Comercial",
+      "Ahorra $97 inmediatamente al hacer el upgrade",
+      "Acceso directo a mentorías para desbloquearte",
+      "Plantillas exactas de fondeo comercial",
+      "Deja de usar tus ahorros, usa el dinero del banco",
+      "Soporte VIP para no cometer errores",
     ],
     cta: "Obtener Libertad Total",
     highlighted: true,
@@ -46,11 +46,11 @@ const plans = [
     badge: null,
     description: "Capitaliza tu negocio con el crédito del banco, no el tuyo.",
     features: [
-      "Estructura legal de protección (LLC)",
-      "Crédito comercial sin aval personal",
-      "Ruta a líneas de $50k - $250k",
-      "Dominio de D&B y Experian Biz",
-      "Estrategias de fondeo bancario",
+      "Estructura legal que blinda tus bienes personales",
+      "Obtén crédito usando tu EIN, no tu SSN",
+      "Ruta comprobada hacia líneas de $50k - $250k",
+      "Domina el algoritmo de Dun & Bradstreet",
+      "Estrategias para que los bancos te busquen a ti",
     ],
     cta: "Iniciar Fondeo",
     highlighted: false,
@@ -77,7 +77,7 @@ export const CursosSection = () => {
             viewport={{ once: true }}
             className="text-brand-navy font-display font-bold text-4xl md:text-7xl mb-8 tracking-tight"
           >
-            Invierte en tu <span className="text-brand-green italic">futuro financiero</span>.
+            El costo de no saber es <span className="text-brand-green italic">incalculable</span>.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -86,7 +86,7 @@ export const CursosSection = () => {
             transition={{ delay: 0.1 }}
             className="text-brand-navy/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium"
           >
-            Precios estratégicos diseñados para que el conocimiento sea tu activo más rentable.
+            Pagas miles de dólares en intereses adicionales por tener un crédito desconfigurado. Aprende a repararlo de una vez por todas.
           </motion.p>
         </div>
 
@@ -100,7 +100,7 @@ export const CursosSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className={cn(
-                "relative flex flex-col rounded-[2.5rem] p-10 transition-all duration-500",
+                "relative flex flex-col rounded-[2.5rem] p-6 md:p-10 transition-all duration-500",
                 plan.highlighted
                   ? "bg-brand-navy text-white shadow-[0_40px_80px_-15px_rgba(16,20,49,0.3)] scale-[1.08] z-10 border-2 border-brand-green/30"
                   : "bg-brand-navy/5 border border-brand-navy/10 hover:bg-white hover:shadow-2xl hover:border-brand-green/20"

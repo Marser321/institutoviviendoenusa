@@ -165,21 +165,27 @@ export const CreditMeter = ({ targetScore = 720, size = 320 }: CreditMeterProps)
 
       {/* Center display */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span
+        <motion.span
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
           className="font-display font-black tabular-nums leading-none"
           style={{ fontSize: size * 0.22, color: currentRange.color }}
         >
           {displayScore}
-        </span>
+        </motion.span>
         <span className="text-white/40 text-xs font-bold uppercase tracking-[0.3em] mt-1">
-          Credit Score
+          Puntaje FICO®
         </span>
-        <span
+        <motion.span
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.5 }}
           className="text-xs font-semibold mt-2 px-3 py-1 rounded-full"
           style={{ backgroundColor: `color-mix(in oklch, ${currentRange.color} 20%, transparent)`, color: currentRange.color }}
         >
           {currentRange.label}
-        </span>
+        </motion.span>
       </div>
     </div>
   );

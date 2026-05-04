@@ -7,36 +7,20 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    question: "¿Es legal el proceso de reparación de crédito?",
-    answer: "Absolutamente. Está respaldado por la Ley de Informes Justos de Crédito (FCRA). Tienes el derecho legal de disputar cualquier información inexacta, incompleta o no verificable en tu reporte.",
+    question: "¿Es realmente legal borrar información negativa?",
+    answer: "Absolutamente. La Ley FCRA te otorga el derecho de cuestionar cualquier dato inexacto o no verificable. Si los burós no pueden probar que la deuda es 100% legítima, están obligados a borrarla.",
   },
   {
-    question: "¿Cuánto tiempo toma ver resultados reales?",
-    answer: "Aunque cada caso es único, la mayoría de nuestros alumnos y clientes ven cambios significativos en los primeros 45 a 90 días. La clave es la consistencia en las estrategias que enseñamos.",
+    question: "¿Cuándo veré el cambio en mi poder de compra?",
+    answer: "Los primeros resultados suelen aparecer en 45-90 días. No se trata solo de subir un número, sino de limpiar tu perfil para que los bancos dejen de verte como un riesgo.",
   },
   {
-    question: "¿Necesito tener Seguro Social (SSN) para participar?",
-    answer: "No necesariamente. También trabajamos con personas que tienen ITIN. El sistema crediticio en USA permite construir historial con ambos documentos.",
+    question: "¿Puedo hacerlo si solo tengo ITIN?",
+    answer: "Sí. El sistema financiero de USA no discrimina el tipo de documento, discrimina el comportamiento. Hemos ayudado a cientos de personas con ITIN a comprar su primera casa.",
   },
   {
-    question: "¿Garantizan un puntaje específico (ej. 700+)?",
-    answer: "Nadie puede garantizar un puntaje exacto legalmente. Lo que garantizamos es la aplicación de las leyes y estrategias que históricamente han llevado a miles de personas a superar los 700 puntos.",
-  },
-  {
-    question: "¿Qué pasa si me vuelven a negar un crédito?",
-    answer: "Te enseñamos a leer las cartas de rechazo. Muchas veces es un error administrativo o de dirección que se soluciona en minutos. Te damos el soporte para que sepas exactamente qué responder.",
-  },
-  {
-    question: "¿La Comunidad VIP tiene permanencia obligatoria?",
-    answer: "Para nada. Puedes cancelar tu suscripción de $49/mes en cualquier momento sin penalizaciones. Queremos que te quedes por el valor que recibes, no por un contrato.",
-  },
-  {
-    question: "¿Cómo sé qué curso es el adecuado para mí?",
-    answer: "Si quieres comprar una casa o auto a título personal, el Curso de Crédito Personal es tu base. Si buscas financiamiento para tu negocio sin arriesgar tu patrimonio personal, el Curso Comercial es el indicado.",
-  },
-  {
-    question: "¿Vojmir realmente responde las dudas?",
-    answer: "Sí. Vojmir participa activamente en el grupo de WhatsApp VIP y lidera las sesiones en vivo de los martes. Es mentoría real, no solo videos grabados.",
+    question: "¿Por qué Vojmir es diferente a una agencia?",
+    answer: "Las agencias quieren cobrarte una mensualidad eterna. Vojmir te entrega 'las llaves del castillo' para que tú mismo domines el sistema y nunca vuelvas a depender de nadie.",
   },
 ];
 

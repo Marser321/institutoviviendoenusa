@@ -156,26 +156,27 @@ export const ComparisonSlider = () => {
 
           {/* Slider Handle */}
           <div 
-            className="absolute top-0 bottom-0 w-2.5 bg-brand-green z-40 pointer-events-none shadow-[0_0_60px_rgba(136,176,75,1)]"
+            className="absolute top-0 bottom-0 w-1 bg-white/40 z-40 pointer-events-none"
             style={{ left: `${sliderPosition}%` }}
           >
+            <div className="absolute inset-0 bg-brand-green blur-sm opacity-50" />
             <motion.div 
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full shadow-2xl flex items-center justify-center text-brand-green ring-[16px] ring-brand-green/20"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white rounded-full shadow-2xl flex items-center justify-center text-brand-green ring-[12px] ring-brand-green/20 cursor-grab active:cursor-grabbing pointer-events-auto"
             >
-              <MoveHorizontal className="w-10 h-10" />
+              <MoveHorizontal className="w-8 h-8" />
             </motion.div>
           </div>
 
           {/* Labels */}
           <div className="absolute bottom-12 left-12 z-50 pointer-events-none">
-            <span className="bg-brand-green text-white px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-[0.5em] shadow-2xl backdrop-blur-xl border border-white/20">
-              Futuro Prometido
+            <span className="bg-brand-green/90 text-white px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-[0.5em] shadow-2xl backdrop-blur-xl border border-white/30">
+              Paz Financiera
             </span>
           </div>
           <div className="absolute bottom-12 right-12 z-50 pointer-events-none">
-            <span className="bg-brand-navy text-white px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-[0.5em] shadow-2xl backdrop-blur-xl border border-white/10">
+            <span className="bg-brand-navy/80 text-white px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-[0.5em] shadow-2xl backdrop-blur-xl border border-white/10">
               Estado Actual
             </span>
           </div>

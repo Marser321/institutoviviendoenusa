@@ -29,16 +29,16 @@ export const FinalCTA = () => {
               Tu nueva historia empieza hoy
             </span>
             <h2 className="text-white font-display font-bold text-5xl md:text-8xl mb-10 leading-[1.05] tracking-tight">
-              ¿Listo para tomar el control de tu <span className="text-brand-green italic">destino</span>?
+              ¿Vas a permitir que un número decida tu <span className="text-brand-green italic">futuro</span>?
             </h2>
             <p className="text-white/60 text-xl md:text-2xl max-w-2xl mx-auto mb-16 leading-relaxed font-medium">
-              No dejes que un reporte de crédito dicte lo que puedes o no puedes lograr. Solicita tu auditoría gratuita y descubre el camino exacto hacia tu libertad financiera.
+              El sistema no espera a nadie. Cada día sin una estrategia clara es dinero que regalas al banco. Obtén tu diagnóstico estratégico y toma el control ahora.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
               <button className="group relative bg-brand-green text-white px-12 py-6 rounded-2xl font-black text-xl transition-all hover:scale-[1.05] active:scale-[0.95] overflow-hidden shadow-2xl shadow-brand-green/30 w-full sm:w-auto uppercase tracking-widest">
                 <span className="relative z-10 flex items-center justify-center gap-3">
-                  Iniciar Auditoría Gratis
+                  Diagnosticar Mi Crédito
                   <ArrowUpRight className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" />

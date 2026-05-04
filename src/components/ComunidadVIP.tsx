@@ -65,14 +65,14 @@ export const ComunidadVIP = () => {
         >
           <motion.div variants={itemVariants} className="inline-flex items-center gap-2 bg-brand-green/10 px-4 py-1.5 rounded-full mb-6">
             <Sparkles className="w-4 h-4 text-brand-green" />
-            <span className="text-brand-green text-xs font-bold uppercase tracking-[0.2em]">Suscripción Mensual</span>
+            <span className="text-brand-green text-xs font-bold uppercase tracking-[0.2em]">El Círculo Interno</span>
           </motion.div>
           <motion.h2 variants={itemVariants} className="text-brand-navy font-display font-bold text-4xl md:text-6xl mb-6 tracking-tight">
-            No camines solo. Únete a la{" "}
+            El sistema aísla a los desinformados. Blíndate en nuestra{" "}
             <span className="text-brand-green italic">Comunidad VIP</span>.
           </motion.h2>
           <motion.p variants={itemVariants} className="text-brand-navy/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
-            Acceso ilimitado a expertos, recursos exclusivos y una comunidad que entiende tus desafíos por solo $49 al mes.
+            Deja de buscar respuestas dispersas en Google. Accede al cerebro operativo de IVEU, obtén soporte 24/7 y usa las plantillas que los burós no quieren que tengas.
           </motion.p>
         </motion.div>
 
@@ -114,17 +114,17 @@ export const ComunidadVIP = () => {
           className="mt-16 bg-brand-navy rounded-[2.5rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 text-white shadow-2xl shadow-brand-navy/20 relative overflow-hidden"
         >
           <div className="relative z-10">
-            <p className="text-brand-green text-sm font-bold uppercase tracking-[0.3em] mb-4">La Inversión más inteligente</p>
+            <p className="text-brand-green text-sm font-bold uppercase tracking-[0.3em] mb-4">Costo de no saber: Incalculable</p>
             <div className="flex items-baseline gap-6 mb-4">
-              <span className="text-white/30 line-through text-3xl font-display font-bold">$400+/mes</span>
+              <span className="text-white/30 line-through text-3xl font-display font-bold">$500/hora</span>
               <span className="text-brand-green font-display font-black text-7xl tracking-tighter">$49</span>
               <span className="text-white/40 text-2xl font-bold">/mes</span>
             </div>
-            <p className="text-white/60 text-lg font-medium">Mentoría VIP en tu bolsillo · Cancela cuando quieras</p>
+            <p className="text-white/60 text-lg font-medium">Un estratega financiero en tu WhatsApp por $1.60 al día.</p>
           </div>
           
           <button className="relative z-10 bg-brand-green hover:bg-white hover:text-brand-navy text-white px-12 py-6 rounded-2xl font-black text-lg transition-all hover:scale-[1.05] active:scale-[0.95] shadow-xl shadow-brand-green/20 whitespace-nowrap uppercase tracking-widest">
-            Unirme Ahora
+            Asegurar Mi Cupo VIP
           </button>
 
           {/* Decorative elements inside CTA */}

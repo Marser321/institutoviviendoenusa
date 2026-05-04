@@ -5,46 +5,45 @@ import { motion } from "framer-motion";
 import { Star, TrendingUp } from "lucide-react";
 
 const testimonials = [
-  {
     name: "María Fernández",
     location: "Orlando, FL",
-    quote: "Logré refinanciar mi auto y ahorrar $350 mensuales en solo 4 meses. Este programa cambió mi vida financiera.",
-    result: "+180 puntos",
+    quote: "Creí que mi bancarrota me condenaba por 10 años. Aplicando la estrategia de reconstrucción, refinancié mi auto y hoy ahorro $350 mensuales.",
+    result: "Objeción: Bancarrota",
     avatar: "MF",
   },
   {
     name: "Carlos Rodríguez",
     location: "Houston, TX",
-    quote: "Pasé de ser invisible para los bancos a aprobar mi primera hipoteca. Mi familia tiene casa propia gracias a Vojmir.",
-    result: "+210 puntos",
+    quote: "Los bancos me rechazaban por tener un negocio 'riesgoso'. Vojmir me enseñó a separar mi perfil personal del comercial. Hoy tengo mi hipoteca.",
+    result: "Objeción: Trabajador Independiente",
     avatar: "CR",
   },
   {
     name: "Ana Gutiérrez",
     location: "Miami, FL",
-    quote: "La comunidad VIP es increíble. Cada martes aprendo algo nuevo. Mi score subió de 520 a 715 en 6 meses.",
-    result: "+195 puntos",
+    quote: "Estaba harta de 'agencias' que cobraban mes a mes sin resultados. IVEU me dio las herramientas para hacerlo yo misma y subir a 715 puntos.",
+    result: "Objeción: ¿Es otra estafa?",
     avatar: "AG",
   },
   {
     name: "Roberto Méndez",
     location: "Los Ángeles, CA",
-    quote: "Abrí mi LLC con líneas de crédito comercial de más de $50K gracias al curso. Inversión que se pagó sola.",
-    result: "$50K en líneas",
+    quote: "Pensaba que necesitaba usar mis ahorros para mi negocio. Abrí mi LLC y obtuve $50K en crédito comercial al 0% de interés.",
+    result: "Objeción: Falta de Capital",
     avatar: "RM",
   },
   {
     name: "Lucía Pérez",
     location: "Chicago, IL",
-    quote: "Llegué sin crédito desde México. En 8 meses ya tengo 3 tarjetas de crédito y un score de 690. ¡Increíble!",
-    result: "De 0 a 690",
+    quote: "Llegué a USA solo con ITIN y me decían que no podía tener tarjetas. En 8 meses logré un score de 690 siguiendo la ruta exacta.",
+    result: "Objeción: No tengo SSN",
     avatar: "LP",
   },
   {
     name: "José Martínez",
     location: "Dallas, TX",
-    quote: "Las plantillas de disputa funcionaron al primer intento. Me eliminaron 4 colecciones del reporte en 30 días.",
-    result: "4 colecciones eliminadas",
+    quote: "Pensé que mis cuentas médicas en colección eran imborrables. Las plantillas FCRA de IVEU obligaron a los burós a eliminarlas en 30 días.",
+    result: "Objeción: Cuentas en Colección",
     avatar: "JM",
   },
 ];
@@ -64,13 +63,13 @@ export const TestimonialsSection = () => {
           className="text-center"
         >
           <span className="inline-block text-brand-green text-sm font-bold uppercase tracking-[0.3em] mb-4">
-            Testimonios Reales
+            Testimonios Anti-Excusas
           </span>
           <h2 className="text-brand-navy font-display font-bold text-4xl md:text-6xl mb-6 tracking-tight">
-            Historias de <span className="text-brand-green italic">Transformación</span>.
+            Derribamos tus <span className="text-brand-green italic">objeciones</span> con resultados.
           </h2>
           <p className="text-brand-navy/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
-            Cada número representa una familia hispana que recuperó su poder financiero. Estos son resultados verificados de nuestra comunidad.
+            Ya hemos escuchado todas las razones por las que "tu caso es diferente". Mira cómo nuestra comunidad hispana superó exactamente tu misma situación.
           </p>
         </motion.div>
       </div>

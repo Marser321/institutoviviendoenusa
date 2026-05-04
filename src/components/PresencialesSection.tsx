@@ -106,6 +106,7 @@ export const PresencialesSection = () => {
                 src={event.image}
                 alt={event.city}
                 fill
+                priority={i === 0}
                 className="object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40"
               />
               

@@ -40,19 +40,19 @@ export const ExpertSection = () => {
         >
           <div>
             <span className="inline-block text-brand-green text-sm font-bold uppercase tracking-[0.3em] mb-4">
-              Liderazgo con Propósito
+              Decodificando el Sistema
             </span>
             <h2 className="text-brand-navy font-display font-bold text-4xl md:text-7xl mb-8 leading-[1.1] tracking-tight">
-              Tu guía experto hacia la <span className="text-brand-green italic">Libertad Financiera</span>.
+              Yo llegué igual que tú. Hoy te entrego <span className="text-brand-green italic">el mapa</span>.
             </h2>
           </div>
 
           <div className="space-y-8 text-brand-navy/60 text-lg md:text-xl leading-relaxed font-medium">
             <p>
-              Como inmigrante, entiendo perfectamente los retos de construir una vida desde cero en Estados Unidos. El crédito no es solo un número; es la llave que abre las puertas de tu primera casa, tu primer negocio y el futuro de tu familia.
+              Cuando llegué a Estados Unidos, el sistema financiero me parecía un muro infranqueable. Nadie me explicó cómo jugar este juego. Entendí que el crédito no es un puntaje que te juzga, es la llave que usan para decidir si te abren la puerta de tu primera casa o te la cierran en la cara.
             </p>
             <p>
-              He dedicado los últimos 15 años a simplificar el complejo sistema financiero americano para nuestra comunidad. Mi misión es que ningún hispano se sienta excluido de las oportunidades por falta de conocimiento o un reporte de crédito desfavorable.
+              En los últimos 15 años, pasé de intentar entender el sistema a hackearlo por completo. No necesitas nacer aquí para dominar sus reglas. Mi misión es entregarte el mapa exacto para que dejes de pagar intereses abusivos y comiences a capitalizar tu esfuerzo.
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export const ExpertSection = () => {
 
           <div className="pt-10 border-t border-brand-navy/5">
             <blockquote className="italic text-brand-navy/80 text-2xl font-medium border-l-4 border-brand-green pl-8 leading-relaxed">
-              "Mi éxito se mide por cuántas familias logran la paz crediticia y compran su primer hogar en este gran país."
+              "El sistema no está diseñado para enseñarte, está diseñado para cobrarte. Cuando aprendes las reglas, dejas de ser una estadística y te conviertes en el dueño del juego."
             </blockquote>
           </div>
         </motion.div>

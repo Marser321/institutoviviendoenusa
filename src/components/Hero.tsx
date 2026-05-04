@@ -1,11 +1,32 @@
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { CreditMeter } from "@/components/CreditMeter";
-import { ChevronRight, Sparkles, ShieldCheck, Mail, User, Phone } from "lucide-react";
+import { ChevronRight, Sparkles, ShieldCheck, Mail, User, Phone, CheckCircle2, Loader2 } from "lucide-react";
 
 export const Hero = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: ""
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulación de integración con GoHighLevel Webhook
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      setIsSuccess(true);
+    } catch (error) {
+      console.error("Error submitting form", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -25,9 +46,25 @@ export const Hero = () => {
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-20 overflow-hidden bg-transparent">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-blue/5 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-brand-green/5 blur-[120px] rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.02]" />
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+            y: [0, -30, 0]
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-brand-blue/10 blur-[120px] rounded-full" 
+        />
+        <motion.div 
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            x: [0, -50, 0],
+            y: [0, 30, 0]
+          }}
+          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-green/10 blur-[120px] rounded-full" 
+        />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -44,19 +81,19 @@ export const Hero = () => {
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="text-brand-navy font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight">
-            Recupera tu <span className="relative inline-block text-brand-green italic">
-              Paz Crediticia
+            Deja de <span className="relative inline-block text-brand-green italic">
+              rentar tu vida
               <motion.div 
                 initial={{ width: 0 }}
                 whileInView={{ width: "100%" }}
                 transition={{ duration: 0.8, delay: 1 }}
                 className="absolute bottom-2 left-0 h-3 bg-brand-green/20 -z-10" 
               />
-            </span> y conquista USA.
+            </span> en Estados Unidos.
           </motion.h1>
 
           <motion.p variants={itemVariants} className="text-brand-navy/60 text-lg md:text-xl max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-            No dejes que un número limite tu futuro. Enseñamos a la comunidad hispana a dominar el sistema bancario para comprar casa, auto y capitalizar sus negocios.
+            El sistema financiero tiene reglas claras. Quienes las ignoran, pagan sobreprecios. Quienes las dominan, compran casas, autos y capitalizan sus negocios. Te enseñamos a jugar para ganar.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-4">
@@ -84,48 +121,95 @@ export const Hero = () => {
               <div className="w-12 h-12 bg-brand-green/10 rounded-xl flex items-center justify-center mb-4">
                 <ShieldCheck className="w-6 h-6 text-brand-green" />
               </div>
-              <h3 className="text-brand-navy font-display font-bold text-2xl mb-2 italic tracking-tight">Auditoría Gratuita</h3>
-              <p className="text-brand-navy/50 text-sm font-medium">Descubre qué está bloqueando tu puntaje FICO® y cómo solucionarlo hoy mismo.</p>
+              <h3 className="text-brand-navy font-display font-bold text-2xl mb-2 italic tracking-tight">Diagnóstico Estratégico</h3>
+              <p className="text-brand-navy/50 text-sm font-medium">Descubre qué algoritmo frena tu FICO® y el mapa exacto para desbloquearlo.</p>
             </div>
 
             {/* Form Fields */}
-            <form className="space-y-4 relative z-10" onSubmit={(e) => e.preventDefault()}>
-              <div className="relative">
-                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-navy/30" />
-                <input 
-                  type="text" 
-                  placeholder="Nombre completo" 
-                  className="w-full bg-brand-navy/5 border border-brand-navy/10 rounded-xl py-4 pl-12 pr-4 text-brand-navy placeholder:text-brand-navy/30 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all font-medium"
-                />
-              </div>
-              <div className="relative">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-navy/30" />
-                <input 
-                  type="email" 
-                  placeholder="Correo electrónico principal" 
-                  className="w-full bg-brand-navy/5 border border-brand-navy/10 rounded-xl py-4 pl-12 pr-4 text-brand-navy placeholder:text-brand-navy/30 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all font-medium"
-                />
-              </div>
-              <div className="relative">
-                <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-navy/30" />
-                <input 
-                  type="tel" 
-                  placeholder="WhatsApp (con código de área)" 
-                  className="w-full bg-brand-navy/5 border border-brand-navy/10 rounded-xl py-4 pl-12 pr-4 text-brand-navy placeholder:text-brand-navy/30 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all font-medium"
-                />
-              </div>
-              
-              <button className="w-full group relative bg-brand-green text-white py-5 rounded-xl font-black text-sm transition-all hover:scale-[1.02] active:scale-[0.98] overflow-hidden shadow-xl shadow-brand-green/20 uppercase tracking-[0.2em] mt-6">
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  Solicitar Auditoría Gratis
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" />
-              </button>
-              <p className="text-[10px] text-brand-navy/30 text-center uppercase tracking-widest font-black mt-4">
-                🔒 Tus datos están 100% protegidos por IVEU
-              </p>
-            </form>
+            <AnimatePresence mode="wait">
+              {!isSuccess ? (
+                <motion.form 
+                  key="form"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="space-y-4 relative z-10" 
+                  onSubmit={handleSubmit}
+                >
+                  <div className="relative">
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-navy/30" />
+                    <input 
+                      required
+                      type="text" 
+                      placeholder="Nombre completo" 
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      className="w-full bg-brand-navy/5 border border-brand-navy/10 rounded-xl py-4 pl-12 pr-4 text-brand-navy placeholder:text-brand-navy/30 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all font-medium"
+                    />
+                  </div>
+                  <div className="relative">
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-navy/30" />
+                    <input 
+                      required
+                      type="email" 
+                      placeholder="Correo electrónico principal" 
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      className="w-full bg-brand-navy/5 border border-brand-navy/10 rounded-xl py-4 pl-12 pr-4 text-brand-navy placeholder:text-brand-navy/30 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all font-medium"
+                    />
+                  </div>
+                  <div className="relative">
+                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-navy/30" />
+                    <input 
+                      required
+                      type="tel" 
+                      placeholder="WhatsApp (con código de área)" 
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      className="w-full bg-brand-navy/5 border border-brand-navy/10 rounded-xl py-4 pl-12 pr-4 text-brand-navy placeholder:text-brand-navy/30 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all font-medium"
+                    />
+                  </div>
+                  
+                  <button 
+                    disabled={isSubmitting}
+                    className="w-full group relative bg-brand-green text-white py-5 rounded-xl font-black text-sm transition-all hover:scale-[1.02] active:scale-[0.98] overflow-hidden shadow-xl shadow-brand-green/20 uppercase tracking-[0.2em] mt-6 disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          Procesando...
+                        </>
+                      ) : (
+                        <>
+                          Desbloquear Mi Reporte
+                          <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </>
+                      )}
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                  </button>
+                  <p className="text-[10px] text-brand-navy/30 text-center uppercase tracking-widest font-black mt-4">
+                    🔒 Tus datos están 100% protegidos por IVEU
+                  </p>
+                </motion.form>
+              ) : (
+                <motion.div 
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center py-12 text-center"
+                >
+                  <div className="w-20 h-20 bg-brand-green rounded-full flex items-center justify-center mb-6 shadow-xl shadow-brand-green/20">
+                    <CheckCircle2 className="w-10 h-10 text-white" />
+                  </div>
+                  <h4 className="text-brand-navy font-display font-bold text-3xl mb-4 italic">¡Solicitud Enviada!</h4>
+                  <p className="text-brand-navy/60 font-medium leading-relaxed">
+                    Hemos recibido tus datos correctamente. En breve un asesor se pondrá en contacto contigo vía WhatsApp para iniciar tu diagnóstico estratégico.
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Decorative background circle */}
             <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-brand-green/5 rounded-full blur-3xl" />

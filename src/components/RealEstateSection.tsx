@@ -1,8 +1,6 @@
-"use client";
-
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Building2, Calendar, CheckCircle2, ChevronRight, Home, TrendingUp } from "lucide-react";
+import { Building2, Calendar, CheckCircle2, ChevronRight, Home, TrendingUp, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const steps = [
@@ -24,10 +22,16 @@ export const RealEstateSection = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isQualified, setIsQualified] = useState(false);
 
-  const handleNext = () => {
+  const [isQualifying, setIsQualifying] = useState(false);
+
+  const handleNext = async () => {
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
+      setIsQualifying(true);
+      // Simular procesamiento de pre-calificación
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      setIsQualifying(false);
       setIsQualified(true);
     }
   };
@@ -44,7 +48,7 @@ export const RealEstateSection = () => {
               viewport={{ once: true }}
               className="inline-block text-brand-green text-sm font-bold uppercase tracking-[0.3em] mb-4"
             >
-              Consultoría de Élite
+              El Atajo Inmobiliario
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -52,12 +56,12 @@ export const RealEstateSection = () => {
               viewport={{ once: true }}
               className="text-brand-navy font-display font-bold text-4xl md:text-6xl tracking-tight leading-[1.1]"
             >
-              Invierte en <span className="text-brand-green">Real Estate</span> con la estrategia correcta.
+              Tu primera casa no es un sueño. Es <span className="text-brand-green italic">matemática</span>.
             </motion.h2>
           </div>
 
           <p className="text-brand-navy/60 text-lg leading-relaxed font-medium">
-            No es solo comprar una casa, es construir patrimonio. Vojmir te guía en el proceso de calificación y selección para asegurar que tu inversión sea rentable desde el día uno.
+            El 90% de los latinos que intentan comprar casa son rechazados o aceptan tasas usureras. Te revelamos la estrategia exacta que usan los inversores locales para ser aprobados bajo sus propias condiciones.
           </p>
 
           <div className="space-y-6">
@@ -66,8 +70,8 @@ export const RealEstateSection = () => {
                   <TrendingUp className="w-6 h-6 text-brand-green" />
                </div>
                <div>
-                  <p className="text-brand-navy font-bold">Optimización de Intereses</p>
-                  <p className="text-brand-navy/40 text-sm">Ahorra miles de dólares con el score correcto.</p>
+                  <p className="text-brand-navy font-bold">Hackeo de Tasas de Interés</p>
+                  <p className="text-brand-navy/40 text-sm">Deja de pagar el "impuesto" por no entender tu FICO®.</p>
                </div>
             </div>
             <div className="flex items-center gap-4">
@@ -75,8 +79,8 @@ export const RealEstateSection = () => {
                   <Building2 className="w-6 h-6 text-brand-green" />
                </div>
                <div>
-                  <p className="text-brand-navy font-bold">Estrategia Multi-propiedad</p>
-                  <p className="text-brand-navy/40 text-sm">Cómo escalar tu portafolio en Estados Unidos.</p>
+                  <p className="text-brand-navy font-bold">De Inquilino a Inversor</p>
+                  <p className="text-brand-navy/40 text-sm">Cómo usar el dinero del banco para escalar tu patrimonio.</p>
                </div>
             </div>
           </div>
@@ -91,7 +95,7 @@ export const RealEstateSection = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.05 }}
-                className="glass-card p-10 border-brand-navy/10 shadow-2xl bg-brand-navy/5"
+                className="glass-card p-6 md:p-10 border-brand-navy/10 shadow-2xl bg-brand-navy/5"
               >
                 <div className="mb-10 flex items-center justify-between">
                   <div>
@@ -107,11 +111,21 @@ export const RealEstateSection = () => {
                      {steps[currentStep].options.map((option) => (
                        <button
                          key={option}
+                         disabled={isQualifying}
                          onClick={handleNext}
-                         className="w-full p-4 rounded-xl border border-brand-navy/10 bg-white hover:border-brand-green hover:bg-brand-green/5 text-left text-brand-navy font-bold transition-all flex items-center justify-between group"
+                         className="w-full p-4 rounded-xl border border-brand-navy/10 bg-white hover:border-brand-green hover:bg-brand-green/5 text-left text-brand-navy font-bold transition-all flex items-center justify-between group disabled:opacity-50"
                        >
-                         {option}
-                         <ChevronRight className="w-4 h-4 text-brand-green opacity-0 group-hover:opacity-100 transition-opacity" />
+                         {isQualifying ? (
+                           <span className="flex items-center gap-2">
+                             <Loader2 className="w-4 h-4 animate-spin" />
+                             Verificando...
+                           </span>
+                         ) : (
+                           <>
+                             {option}
+                             <ChevronRight className="w-4 h-4 text-brand-green opacity-0 group-hover:opacity-100 transition-opacity" />
+                           </>
+                         )}
                        </button>
                      ))}
                    </div>
@@ -130,7 +144,7 @@ export const RealEstateSection = () => {
                 key="calendar"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="glass-card p-10 border-brand-navy/10 shadow-2xl bg-brand-navy text-white text-center"
+                className="glass-card p-6 md:p-10 border-brand-navy/10 shadow-2xl bg-brand-navy text-white text-center"
               >
                 <div className="w-16 h-16 bg-brand-green rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-brand-green/30">
                   <CheckCircle2 className="w-8 h-8 text-white" />

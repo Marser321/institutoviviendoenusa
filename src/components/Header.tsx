@@ -31,8 +31,10 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-        isScrolled ? "bg-white/95 backdrop-blur-md border-b border-brand-navy/5 py-3 shadow-sm" : "bg-white/50 backdrop-blur-sm"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6 py-4",
+        isScrolled 
+          ? "bg-white/80 backdrop-blur-xl border-b border-brand-navy/10 py-3 shadow-lg shadow-brand-navy/5" 
+          : "bg-white/20 backdrop-blur-lg border-b border-white/30"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -58,10 +60,15 @@ export const Header = () => {
         <div className="hidden lg:block">
           <Link
             href="#auditoria"
-            className="bg-brand-navy hover:bg-brand-green text-white px-8 py-3 rounded-xl text-xs font-black transition-all hover:shadow-xl hover:shadow-brand-green/20 flex items-center gap-2 group uppercase tracking-[0.2em]"
+            className="bg-brand-navy hover:bg-brand-green text-white px-8 py-3 rounded-xl text-xs font-black transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-brand-green/30 flex items-center gap-2 group uppercase tracking-[0.2em]"
           >
-            Iniciar Auditoría
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Diagnóstico FICO®
+            <motion.span
+              animate={{ x: [0, 4, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+            >
+              <ChevronRight className="w-4 h-4" />
+            </motion.span>
           </Link>
         </div>
 
@@ -99,7 +106,7 @@ export const Header = () => {
               className="bg-brand-navy text-white px-6 py-5 rounded-2xl text-center font-black uppercase tracking-[0.2em] text-sm mt-4 shadow-xl shadow-brand-navy/20"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Obtener Auditoría Gratis
+              Iniciar Mi Diagnóstico
             </Link>
           </motion.div>
         )}
