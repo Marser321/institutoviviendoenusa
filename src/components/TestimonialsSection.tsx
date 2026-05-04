@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Star, TrendingUp } from "lucide-react";
 
 const testimonials = [
+  {
     name: "María Fernández",
     location: "Orlando, FL",
     quote: "Creí que mi bancarrota me condenaba por 10 años. Aplicando la estrategia de reconstrucción, refinancié mi auto y hoy ahorro $350 mensuales.",
